@@ -23,7 +23,7 @@ let mapleader=" "
 
 " plug
 call plug#begin('~/.vim/plugged')
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', {'for': 'c'}
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'tpope/vim-fugitive'
 Plug 'kchmck/vim-coffee-script'
@@ -32,7 +32,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'morhetz/gruvbox'
 Plug 'Valloric/vim-valloric-colorscheme'
-Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
+Plug 'Shougo/deoplete.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/rust-doc.vim'
 Plug 'vim-airline/vim-airline'
@@ -61,15 +62,11 @@ let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_warnings=1
 
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"neomake
+autocmd! BufWritePost * Neomake
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"deoplete
+let g:deoplete#enable_at_startup = 1
 
 "rust-doc
 let g:rust_doc#downloaded_rust_doc_dir = '~/Code/rust/doc'
