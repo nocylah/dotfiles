@@ -1,0 +1,6 @@
+[user]
+	email = louis@jencka.us
+	name = Louis Jencka
+	signingkey = 3275370B
+[push]
+	default = simple
