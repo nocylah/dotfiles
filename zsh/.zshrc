@@ -1,4 +1,5 @@
 source /home/louis/.mount_ssync.sh
+source /home/louis/.gpg_s.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
