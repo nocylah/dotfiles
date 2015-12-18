@@ -22,20 +22,19 @@ filetype off
 
 let mapleader=" "
 
-" vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'rodjek/vim-puppet'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'morhetz/gruvbox'
-Plugin 'Valloric/vim-valloric-colorscheme'
+" plug
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-fugitive'
+Plug 'kchmck/vim-coffee-script'
+Plug 'rodjek/vim-puppet'
+Plug 'airblade/vim-gitgutter'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'morhetz/gruvbox'
+Plug 'Valloric/vim-valloric-colorscheme'
 " Plugin 'scrooloose/syntastic'
-call vundle#end()
+call plug#end()
 
 "gitgutter
 let g:gitgutter_enabled=1
