@@ -1,6 +1,6 @@
 syntax on
 
-set spell spelllang=en_us
+set spell
 
 set expandtab
 set tabstop=4
