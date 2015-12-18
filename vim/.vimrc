@@ -33,7 +33,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'morhetz/gruvbox'
 Plug 'Valloric/vim-valloric-colorscheme'
-" Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 "gitgutter
