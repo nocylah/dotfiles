@@ -1,5 +1,5 @@
-source /home/louis/.mount_ssync.sh
-source /home/louis/.gpg_s.sh
+# Source extra scripts
+for f in ~/.scripts/*; do source $f; done
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
