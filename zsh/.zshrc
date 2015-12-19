@@ -43,6 +43,7 @@ alias socks="mosh --ssh='ssh -v -TND 5115'"
 alias ccat="pygmentize -f terminal -g"
 alias e="nvim"
 alias y="yaourt"
+alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
 function supertex() {
 while true; do

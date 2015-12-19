@@ -14,7 +14,7 @@ fi
 xflux -z 87801
 
 compton -CGb
-feh --randomize --bg-fill ~/.wallpaper/*
+feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper
 #xautolock -locker "$HOME/.local/bin/screenlock.sh" -time 5 &
 xautolock -locker "/home/louis/.local/bin/screenlock.sh" -time 5 &
 unclutter &
