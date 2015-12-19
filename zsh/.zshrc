@@ -65,6 +65,9 @@ export PATH=$PATH:/home/louis/.gem/ruby/2.1.0/bin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 export PATH=$PATH:$HOME/.local/bin
 
+# rust cargo path
+export PATH=$PATH:$HOME/.cargo/bin
+
 # GNUStep CLASSPATH fix
 export CLASSPATH=".:$CLASSPATH"
 
