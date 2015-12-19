@@ -41,7 +41,7 @@ alias tmux="tmux -2"
 alias resource="source ~/.zshrc"
 alias socks="mosh --ssh='ssh -v -TND 5115'"
 alias ccat="pygmentize -f terminal -g"
-alias v="nvim"
+alias e="nvim"
 alias y="yaourt"
 
 function supertex() {
