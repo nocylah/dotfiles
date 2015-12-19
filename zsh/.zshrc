@@ -44,7 +44,7 @@ alias FTL="zsh -c 'cd ~/Applications/FTL/ && ./FTL'"
 alias DF="/home/louis/Applications/df_linux/df"
 alias socks="mosh --ssh='ssh -v -TND 5115'"
 alias ccat="pygmentize -f terminal -g"
-alias v="vim"
+alias v="nvim"
 alias y="yaourt"
 
 function supertex() {
@@ -59,7 +59,7 @@ function pdf() {
     pdftotext -nopgbrk -layout $1 - | less
 }
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export PATH=$PATH:/home/louis/.gem/ruby/2.1.0/bin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
