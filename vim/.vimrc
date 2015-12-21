@@ -34,6 +34,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'morhetz/gruvbox'
 Plug 'Valloric/vim-valloric-colorscheme'
 Plug 'scrooloose/syntastic'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 "gitgutter
