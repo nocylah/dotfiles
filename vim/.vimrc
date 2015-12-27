@@ -35,6 +35,7 @@ Plug 'morhetz/gruvbox'
 Plug 'Valloric/vim-valloric-colorscheme'
 Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
+Plug 'bling/vim-airline'
 call plug#end()
 
 "gitgutter
@@ -43,16 +44,14 @@ let g:gitgutter_enabled=1
 let g:gitgutter_realtime=1
 let g:gitgutter_eager=1
 
-"powerline
-"set rtp+=$HOME/.local/lib/python3.4/site-packages/powerline/bindings/vim/
-"set laststatus=2
-set t_Co=256
-"let g:Powerline_symbols='fancy'
+"airline
+let g:airline_powerline_fonts = 1
 
 "colorscheme valloric
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark='dark'
+set t_Co=256
 
 "syntastic
 set statusline+=%#warningmsg#
