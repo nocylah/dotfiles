@@ -45,6 +45,10 @@ alias e="nvim"
 alias y="yaourt"
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
+function cless() {
+    ccat $1 | less
+}
+
 function supertex() {
 while true; do
     inotifywait -e modify $1
