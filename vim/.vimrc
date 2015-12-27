@@ -36,6 +36,7 @@ Plug 'Valloric/vim-valloric-colorscheme'
 Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 "gitgutter
