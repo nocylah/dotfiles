@@ -37,6 +37,7 @@ Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jpalardy/vim-slime'
 call plug#end()
 
 "gitgutter
@@ -63,6 +64,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "code:1.2"}
 
 hi Normal ctermbg=none
 hi NonText ctermbg=none
