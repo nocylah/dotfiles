@@ -1,2 +1,1 @@
-colorscheme seaweed
 :highlight Hint font-family: monospace; font-size: 20px; font-weight: bold; text-transform: uppercase; color: rgb(0,255,0); background-color: black; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
