@@ -33,6 +33,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start a browser
+bindsym $mod+backslash exec uzbl-browser
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
