@@ -88,7 +88,7 @@ man() {
 # don't nest tmux
 if [ -z "$TMUX" ] && ! [ -n "$SSH_CLIENT" ]
 then if [ -n "${DISPLAY+1}" ]
-    then exec tmux -2 attach
+    then exec tmux -2 attach || tmux -2
     else TERM="fbterm" tmux; exit
     fi
 fi
