@@ -81,7 +81,7 @@ man() {
     LESS_TERMCAP_se=$'\E[0m' \
     LESS_TERMCAP_so=$'\E[38;5;246m' \
     LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;166m' \
     man "$@"
 }
 
