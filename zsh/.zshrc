@@ -45,9 +45,7 @@ alias e="nvim"
 alias y="yaourt"
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
-function cless() {
-    ccat $1 | less
-}
+export LESSOPEN="| pygmentize -g %s"
 
 function supertex() {
 while true; do
