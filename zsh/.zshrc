@@ -37,15 +37,14 @@ source $ZSH/oh-my-zsh.sh
 
 alias dd="dcfldd"
 alias sbcl="rlwrap sbcl"
-alias tmux="tmux -2"
 alias resource="source ~/.zshrc"
 alias socks="autossh -M 0 -v -TND 5115"
-alias ccat="pygmentize -f terminal -g"
+alias ccat="pygmentize -f teminal16m -O style=monokai -g"
 alias e="nvim"
 alias y="yaourt"
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
-export LESSOPEN="| pygmentize -g %s"
+export LESSOPEN="| pygmentize -f terminal16m -O style=monokai -g %s"
 
 function supertex() {
 while true; do
@@ -60,6 +59,7 @@ function pdf() {
 }
 
 export EDITOR=nvim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 export PATH=$PATH:/home/louis/.gem/ruby/2.1.0/bin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
@@ -86,7 +86,7 @@ man() {
 # don't nest tmux
 if [ -z "$TMUX" ] && ! [ -n "$SSH_CLIENT" ]
 then if [ -n "${DISPLAY+1}" ]
-    then exec tmux -2 attach || tmux -2
+    then tmux attach || tmux
     else TERM="fbterm" tmux; exit
     fi
 fi
