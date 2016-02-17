@@ -17,7 +17,6 @@ set rnu
 
 set hlsearch
 
-set nocompatible
 filetype off
 
 let mapleader=" "
@@ -56,8 +55,9 @@ let g:airline_theme='hybrid'
 "colorscheme valloric
 colorscheme gruvbox
 set background=dark
-let g:gruvbox_contrast_dark='dark'
-set t_Co=256
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_improved_strings=1
+let g:gruvbox_improved_warnings=1
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -75,9 +75,6 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "code:1.2
 
 "coq
 au FileType coq call coquille#CoqideMapping()
-
-hi Normal ctermbg=none
-hi NonText ctermbg=none
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>
