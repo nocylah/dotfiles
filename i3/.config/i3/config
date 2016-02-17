@@ -35,7 +35,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 # start a browser
-bindsym $mod+backslash exec uzbl-browser
+bindsym $mod+backslash exec firefox --new-tab
 
 # kill focused window
 bindsym $mod+Shift+q kill
