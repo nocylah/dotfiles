@@ -38,8 +38,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
-Plug 'the-lambda-church/coquille', { 'branch': 'pathogen-bundle' }
-Plug 'def-lkb/vimbufsync'
 call plug#end()
 
 "gitgutter
@@ -72,9 +70,6 @@ let g:syntastic_check_on_wq = 0
 "slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "code:1.2"}
-
-"coq
-au FileType coq call coquille#CoqideMapping()
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>
