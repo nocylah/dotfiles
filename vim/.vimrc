@@ -25,6 +25,7 @@ let mapleader=" "
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'tpope/vim-fugitive'
 Plug 'kchmck/vim-coffee-script'
 Plug 'rodjek/vim-puppet'
@@ -39,6 +40,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 call plug#end()
+
+"ycm
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 "gitgutter
 let g:gitgutter_enabled=1
