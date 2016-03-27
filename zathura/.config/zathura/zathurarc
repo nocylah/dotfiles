@@ -1,5 +1,6 @@
 set font "terminus normal 26"
-set recolor-darkcolor \#cccc00
+set recolor-lightcolor \#333333
+set recolor-darkcolor \#ccaa00
 set recolor-keephue false
 #set recolor true
 set guioptions ""
