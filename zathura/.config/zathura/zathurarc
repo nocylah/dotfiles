@@ -1,6 +1,7 @@
 set font "terminus normal 26"
-set recolor-darkcolor \#cccc00
-set recolor-keephue false
+set recolor-lightcolor \#282828
+set recolor-darkcolor \#cccccc
+set recolor-keephue true
 #set recolor true
 set guioptions ""
 set selection-clipboard clipboard
