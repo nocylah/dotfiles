@@ -35,6 +35,7 @@ Plug 'morhetz/gruvbox'
 Plug 'Valloric/vim-valloric-colorscheme'
 Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
+Plug 'rhysd/rust-doc.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -70,6 +71,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"rust-doc
+let g:rust_doc#downloaded_rust_doc_dir = '~/Code/rust/doc'
 
 "slime
 let g:slime_target = "tmux"
