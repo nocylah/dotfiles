@@ -23,7 +23,6 @@ let mapleader=" "
 
 " plug
 call plug#begin('~/.vim/plugged')
-Plug 'gmarik/Vundle.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'tpope/vim-fugitive'
