@@ -23,4 +23,6 @@ color15 = #d0d0d0
 
 
 [options]
-font = Terminess Powerline 16
+font = Terminess Powerline 12
+font = TamzenForPowerline 12
+
