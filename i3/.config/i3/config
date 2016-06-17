@@ -81,9 +81,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+n layout stacking
-bindsym $mod+e layout tabbed
-bindsym $mod+i layout toggle split
+bindsym $mod+u layout stacking
+bindsym $mod+i layout tabbed
+bindsym $mod+o layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -161,7 +161,8 @@ bar {
         #tray_output primary
 }
 
-bindsym $mod+m bar mode toggle
+# hide the i3bar
+bindsym $mod+b bar mode toggle
 
 # class                 border  backgr. text    indicator
 client.focused          #4c7899 #285577 #ffffff #2e9ef4
