@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fbterm mosh tmux git git-extras systemd archlinux zsh-syntax-highlighting autojump vi-mode)
+plugins=(mosh tmux git git-extras systemd archlinux zsh-syntax-highlighting autojump vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,11 +83,8 @@ man() {
     man "$@"
 }
 
-# don't nest tmux
-if [ -z "$TMUX" ] && ! [ -n "$SSH_CLIENT" ]
-then if [ -n "${DISPLAY+1}" ]
+# don't nest tmux, only open for ssh
+if [ -z "$TMUX" ] && [ -n "$SSH_CLIENT" ]
     then tmux attach || tmux; exit
-    else TERM="fbterm" tmux; exit
-    fi
 fi
 
