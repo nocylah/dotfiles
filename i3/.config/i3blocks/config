@@ -34,8 +34,8 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=VOL
-#label=♪
+#label=VOL
+label=♪
 instance=Master
 #instance=PCM
 interval=once
@@ -49,11 +49,11 @@ label=MEM
 separator=false
 interval=30
 
-[memory]
-label=SWAP
-instance=swap
-separator=false
-interval=30
+#[memory]
+#label=SWAP
+#instance=swap
+#separator=false
+#interval=30
 
 # Disk usage
 #
@@ -73,35 +73,46 @@ interval=30
 #instance=wlan0
 color=#00FF00
 interval=10
-separator=false
+#separator=false
 
-[wifi]
+#[wifi]
 #instance=wlp3s0
-interval=10
-separator=false
+#interval=10
+#separator=false
 
-[bandwidth]
-#instance=eth0
-interval=5
+#[bandwidth]
+##instance=eth0
+#interval=5
 
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+#label=CPU
+label=Z
 interval=10
-min_width=CPU: 100.00%
-#separator=false
+#min_width=CPU: 100.00%
+separator=false
 
 #[load_average]
 #interval=10
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+#label=TEMP
+interval=10
+
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
-label=BAT
+#label=BAT
 #label=⚡
 #instance=1
 interval=30
@@ -109,7 +120,7 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%d/%m/%y %H:%M:%S'
 interval=5
 
 # Generic media player support
@@ -126,15 +137,6 @@ interval=5
 # Support multiple VPN, with colors.
 #[openvpn]
 #interval=20
-
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
 
 # Key indicators
 #
