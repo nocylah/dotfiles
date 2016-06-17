@@ -29,4 +29,5 @@ feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper
 xscreensaver &
 unclutter -grab &
 nm-applet &
+spopd
 exec $1
