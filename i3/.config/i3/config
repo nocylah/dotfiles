@@ -175,14 +175,14 @@ client.background       #ffffff
 #####
 
 # brightness
-bindcode Control+108 exec xbacklight -dec 10
-bindcode Control+105 exec xbacklight -inc 10
-bindcode $mod+108 exec xbacklight -set 1
+bindcode Control+108 exec xbacklight -dec 5
+bindcode Control+105 exec xbacklight -inc 5
+bindcode $mod+108 exec xbacklight -set 5
 
 # volume
-bindcode Shift+108 exec pactl set-sink-volume 1 -2%
-bindcode Shift+105 exec pactl set-sink-volume 1 +2%
-bindcode $mod+105 exec pactl set-sink-volume 1 0
+bindcode Shift+108 exec pactl set-sink-volume 0 -2%
+bindcode Shift+105 exec pactl set-sink-volume 0 +2%
+bindcode $mod+105 exec pactl set-sink-volume 0 0
 
 # sigstop and sigcont focused window
 bindcode $mod+34 exec kill -s STOP $(xdotool getwindowfocus getwindowpid)
