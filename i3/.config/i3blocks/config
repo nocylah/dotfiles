@@ -38,16 +38,17 @@ markup=none
 label=♪
 instance=Master
 #instance=PCM
-interval=once
+interval=30
 signal=10
+color=#ff4d4d
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
-[memory]
-label=MEM
-separator=false
-interval=30
+#[memory]
+#label=MEM
+#separator=false
+#interval=30
 
 #[memory]
 #label=SWAP
@@ -61,15 +62,17 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+label=📁
 #instance=/mnt/data
 interval=30
+color=#959595
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
+label=🖧
 #instance=wlan0
 color=#00FF00
 interval=10
@@ -90,10 +93,11 @@ interval=10
 # see the script for details.
 [cpu_usage]
 #label=CPU
-label=Z
+label=∿
 interval=10
 #min_width=CPU: 100.00%
 separator=false
+color=#0068f0
 
 #[load_average]
 #interval=10
@@ -106,6 +110,7 @@ separator=false
 [temperature]
 #label=TEMP
 interval=10
+color=#0068f0
 
 
 # Battery indicator
@@ -113,9 +118,10 @@ interval=10
 # The battery instance defaults to 0.
 [battery]
 #label=BAT
-#label=⚡
+label=⚡
 #instance=1
 interval=30
+#color=#f0f000
 
 # Date Time
 #
