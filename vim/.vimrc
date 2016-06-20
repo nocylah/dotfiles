@@ -73,7 +73,8 @@ let g:rust_doc#downloaded_rust_doc_dir = '~/Code/rust/doc'
 
 "slime
 let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "code:1.2"}
+let g:slime_default_config = {"socket_name": "slime", "target_pane": ":"}
+let g:slime_python_ipython = 1
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>

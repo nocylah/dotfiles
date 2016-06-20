@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(mosh tmux git git-extras systemd archlinux zsh-syntax-highlighting autojump vi-mode)
+plugins=(mosh tmux git git-extras systemd archlinux zsh-syntax-highlighting autojump vi-mode virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,6 +43,7 @@ alias ccat="pygmentize -f terminal16m -O style=monokai -g"
 alias e="nvim"
 alias y="yaourt"
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
+alias slime="tmux -L slime new-session"
 
 export LESSOPEN="| pygmentize -f terminal16m -O style=monokai -g %s"
 
