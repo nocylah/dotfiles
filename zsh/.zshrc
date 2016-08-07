@@ -44,6 +44,7 @@ alias e="nvim"
 alias y="yaourt"
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 alias slime="tmux -L slime new-session"
+alias tree="tree -C"
 
 export LESSOPEN="| pygmentize -f terminal16m -O style=monokai -g %s"
 
