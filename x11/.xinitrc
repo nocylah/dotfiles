@@ -29,5 +29,8 @@ feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper
 xscreensaver &
 unclutter -grab &
 nm-applet &
+
+~/.scripts/mount_ssync.sh
 spopd
+
 exec $1
