@@ -9,6 +9,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set nocindent
+set foldmethod=syntax
 
 set tw=80
 set colorcolumn=80
@@ -40,6 +41,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 "ycm
