@@ -42,6 +42,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tmhedberg/SimpylFold'
+Plug 'roryokane/detectindent'
 call plug#end()
 
 "ycm
@@ -77,6 +78,12 @@ let g:rust_doc#downloaded_rust_doc_dir = '~/Code/rust/doc'
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "slime", "target_pane": ":"}
 let g:slime_python_ipython = 1
+
+"detectindent
+augroup DetectIndent
+   autocmd!
+   autocmd BufReadPost *  DetectIndent
+augroup END
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>
