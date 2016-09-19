@@ -18,7 +18,9 @@ set rnu
 
 set hlsearch
 
-filetype off
+set clipboard+=unnamedplus
+
+filetype on
 
 let mapleader=" "
 
