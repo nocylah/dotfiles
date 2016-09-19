@@ -89,10 +89,10 @@ let g:slime_default_config = {"socket_name": "slime", "target_pane": ":"}
 let g:slime_python_ipython = 1
 
 "detectindent
-augroup DetectIndent
-   autocmd!
-   autocmd BufReadPost *  DetectIndent
-augroup END
+"augroup DetectIndent
+"   autocmd!
+"   autocmd BufReadPost *  DetectIndent
+"augroup END
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>
