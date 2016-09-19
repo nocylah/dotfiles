@@ -46,6 +46,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'tmhedberg/SimpylFold'
 Plug 'roryokane/detectindent'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'Shougo/vinarise.vim'
 call plug#end()
 
 "vim-pandoc-syntax
