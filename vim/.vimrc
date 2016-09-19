@@ -45,7 +45,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'tmhedberg/SimpylFold'
 Plug 'roryokane/detectindent'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
+
+"vim-pandoc-syntax
+augroup pandoc_syntax
+    au! BufNewFile,BufFilePRe,BufRead *.md set filetype=markdown.pandoc
+augroup END
 
 "ycm
 let g:ycm_autoclose_preview_window_after_insertion=1
