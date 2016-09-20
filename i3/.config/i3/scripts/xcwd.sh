@@ -7,6 +7,7 @@ X_CMD=$(cat /proc/"$X_PID"/cmdline)
 if ! [[ "$X_PID" ]] || [[ "$X_CMD" != "termite" ]]; then
     # then open term normally
     termite
+    return
 fi
 
 # get current term cwd
