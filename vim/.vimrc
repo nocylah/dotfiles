@@ -15,6 +15,7 @@ set tw=80
 set colorcolumn=80
 set number
 set rnu
+set termguicolors
 
 set hlsearch
 
