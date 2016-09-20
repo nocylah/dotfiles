@@ -1,8 +1,8 @@
 # Molokai Theme
 [colors]
-background = #1B1D1E
+#background = #1B1D1E
 # background = #282828
-#background = rgba(27, 29, 30, .95)
+background = rgba(27, 29, 30, .85)
 foreground = #d0d0d0
 color0 = #101010
 color1 = #960050
