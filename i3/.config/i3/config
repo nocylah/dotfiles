@@ -179,7 +179,7 @@ client.background       #ffffff
 bindsym $mod+p exec passmenu
 
 # vector web
-bindsym $mod+c exec echo -e "@set_mode insert\ntoggle show_status\nuri https://vector.im/beta/" | uzbl-core -c -
+bindsym $mod+c exec chromium --app=https://riot.im/app
 
 # spotify
 bindsym $mod+m exec dspop
