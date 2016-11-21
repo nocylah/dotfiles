@@ -1,6 +1,7 @@
 syntax on
 
 set spell
+set tags+=~/.tags
 
 set expandtab
 set tabstop=4
@@ -16,14 +17,14 @@ set colorcolumn=80
 set number
 set rnu
 set termguicolors
-
 set hlsearch
+set breakindent
 
 set clipboard+=unnamedplus
 
 filetype on
 
-let mapleader=" "
+let mapleader=' '
 
 " plug
 call plug#begin('~/.vim/plugged')
@@ -48,6 +49,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'roryokane/detectindent'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'Shougo/vinarise.vim'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 "vim-pandoc-syntax
@@ -56,7 +58,9 @@ augroup pandoc_syntax
 augroup END
 
 "ycm
-let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_autoclose_preview_window_after_insertion=0
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_add_preview_to_completeopt=1
 
 "gitgutter
 let g:gitgutter_enabled=1
@@ -87,7 +91,7 @@ let g:rust_doc#downloaded_rust_doc_dir = '~/Code/rust/doc'
 "slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "slime", "target_pane": ":"}
-let g:slime_python_ipython = 1
+let g:slime_python_ipython=1
 
 "detectindent
 "augroup DetectIndent
