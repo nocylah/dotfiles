@@ -1,0 +1,15 @@
+{
+ "env": {
+  "LANG": "en_US.UTF-8",
+
+  "VI_MODE": true,
+
+  "XONSH_COLOR_STYLE": "monokai",
+  "PROMPT": "{YELLOW}{short_cwd}{NO_COLOR}> ",
+  "BOTTOM_TOOLBAR": "{BLUE}{env_name:{}}{branch_color}{curr_branch: {}}"
+ },
+
+ "xontribs": [
+  "vox"
+ ]
+}
