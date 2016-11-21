@@ -28,6 +28,7 @@ feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper
 #xautolock -locker "/home/louis/.local/bin/screenlock.sh" -time 5 &
 xscreensaver &
 unclutter -grab &
+blueman-applet &
 nm-applet &
 
 ~/.scripts/mount_ssync.sh
