@@ -1,5 +1,5 @@
 # Source extra scripts
-for f in ~/.scripts/*; do source $f; done
+source ~/.scripts.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -34,58 +34,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(mosh tmux git git-extras systemd archlinux zsh-syntax-highlighting autojump vi-mode virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
-
-alias dd="dcfldd"
-alias sbcl="rlwrap sbcl"
-alias resource="source ~/.zshrc"
-alias socks="autossh -M 0 -v -TND 5115"
-alias ccat="pygmentize -f terminal16m -O style=monokai -g"
-alias e="nvim"
-alias y="yaourt"
-alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
-alias slime="tmux -L slime new-session"
-alias tree="tree -C"
-alias ssh="TERM=xterm-color ssh"
-alias cp="rsync -P"
-
-export LESSOPEN="| pygmentize -f terminal16m -O style=monokai -g %s"
-
-function supertex() {
-while true; do
-    inotifywait -e modify $1
-    texexec --nonstopmode $1
-    pdftotext -layout *.pdf -
-done
-}
-
-function pdf() {
-    pdftotext -nopgbrk -layout $1 - | less
-}
-
-export EDITOR=nvim
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-export PATH=$PATH:/home/louis/.gem/ruby/2.1.0/bin
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin
-export PATH=$PATH:$HOME/.local/bin
-
-# rust cargo path
-export PATH=$PATH:$HOME/.cargo/bin
-
-# GNUStep CLASSPATH fix
-export CLASSPATH=".:$CLASSPATH"
-
-# colored man output
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;166m' \
-    man "$@"
-}
 
 # don't nest tmux, only open for ssh
 if [ -z "$TMUX" ] && [ -n "$SSH_CLIENT" ]
