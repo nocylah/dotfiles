@@ -36,7 +36,9 @@ plugins=(mosh git git-extras systemd archlinux zsh-syntax-highlighting autojump 
 source $ZSH/oh-my-zsh.sh
 
 # don't nest pymux, only open for ssh
-if [ -z "$PYMUX" ] && [ -n "$SSH_CLIENT" ]
-    then pymux attach || pymux; exit
+if [ -z "$PYMUX" ] && [ -n "$SSH_CLIENT" ]; then
+    export TERM=screen-256color
+    pymux attach || pymux
+    exit
 fi
 
