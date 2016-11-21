@@ -64,12 +64,12 @@ let g:ycm_add_preview_to_completeopt=1
 
 "gitgutter
 let g:gitgutter_enabled=1
-"let g:gitgutter_highlight_lines = 1
+"let g:gitgutter_highlight_lines=1
 let g:gitgutter_realtime=1
 let g:gitgutter_eager=1
 
 "airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 "let g:airline_theme='hybrid'
 
 "colorscheme valloric
@@ -83,14 +83,14 @@ let g:gruvbox_improved_warnings=1
 autocmd! BufWritePost * Neomake
 
 "deoplete
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup=1
 
 "rust-doc
-let g:rust_doc#downloaded_rust_doc_dir = '~/Code/rust/doc'
+let g:rust_doc#downloaded_rust_doc_dir='~/Code/rust/doc'
 
 "slime
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "slime", "target_pane": ":"}
+let g:slime_target="tmux"
+let g:slime_default_config={"socket_name": "slime", "target_pane": ":"}
 let g:slime_python_ipython=1
 
 "detectindent
