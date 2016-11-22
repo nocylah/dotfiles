@@ -37,8 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 # don't nest pymux, only open for ssh
 if [ -z "$PYMUX" ] && [ -n "$SSH_CLIENT" ]; then
-    export TERM=screen-256color
-    pymux attach || pymux
+    pymux --ansicolor attach || pymux --ansicolor
     exit
 fi
 
