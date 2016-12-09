@@ -8,7 +8,7 @@ set tabstop=4
 set shiftwidth=4
 
 set autoindent
-set smartindent
+set nosmartindent
 set nocindent
 set foldmethod=syntax
 
@@ -23,6 +23,7 @@ set breakindent
 set clipboard+=unnamedplus
 
 filetype on
+filetype indent on
 
 let mapleader=' '
 
