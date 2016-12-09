@@ -30,7 +30,7 @@ let mapleader=' '
 " plug
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', {'for': 'c'}
-Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+Plug 'rdnetto/YCM-Generator', {'for': 'c', 'branch': 'stable'}
 Plug 'tpope/vim-fugitive'
 Plug 'kchmck/vim-coffee-script'
 Plug 'rodjek/vim-puppet'
