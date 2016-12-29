@@ -179,7 +179,7 @@ client.background       #ffffff
 bindsym $mod+p exec passmenu
 
 # vector web
-bindsym $mod+c exec chromium --app=https://riot.im/app
+bindsym $mod+c exec chromium --app=https://riot.im/develop
 
 # spotify
 bindsym $mod+m exec dspop
