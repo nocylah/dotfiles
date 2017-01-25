@@ -25,7 +25,7 @@ fwait() {
     inotifywait -e modify "$1"
 }
 
-eop() {
+fwdo() {
     FILE="$1"; shift
     CMD="$*"
 
