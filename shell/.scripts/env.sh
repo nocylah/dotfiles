@@ -35,7 +35,7 @@ eop() {
     done
 }
 
-bctx() {
+ctx2pdf() {
     while true; do
         fwait "$1"
         context --nonstopmode "$1"
@@ -43,7 +43,14 @@ bctx() {
     done
 }
 
-bmd() {
+md2pdf() {
+    while true; do
+        fwait "$1"
+        pandoc -V geometry:margin=1in "$1" -o "$2"
+    done
+}
+
+md2ctx2pdf() {
     FILE="$1"; shift
     BDIR="build"
     BPDF="build.pdf"
@@ -63,7 +70,7 @@ bmd() {
     done
 }
 
-pdf() {
+showpdf() {
     pdftotext -nopgbrk -layout "$1" - | less
 }
 
