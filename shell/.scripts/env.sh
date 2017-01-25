@@ -21,7 +21,7 @@ alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 alias tree="tree -C"
 export LESSOPEN="| pygmentize -f terminal16m -O style=monokai -g %s"
 
-eye_of_providence() {
+fwait() {
     inotifywait -e modify "$1"
 }
 
@@ -30,23 +30,36 @@ eop() {
     CMD="$*"
 
     while true; do
-        eye_of_providence "$FILE"
+        fwait "$FILE"
         $CMD
     done
 }
 
-eop_context() {
+bctx() {
     while true; do
-        eye_of_providence "$1"
-        texexec --nonstopmode "$1"
+        fwait "$1"
+        context --nonstopmode "$1"
         pdftotext -layout ./.*pdf -
     done
 }
 
-eop_pandoc() {
+bmd() {
+    FILE="$1"; shift
+    BDIR="build"
+    BPDF="build.pdf"
+
+    if [ ! -z "$1" ]; then BDIR="$1"; shift; fi
+    if [ ! -z "$1" ]; then BPDF="$1"; shift; fi
+
+    mkdir -p "$BDIR"
     while true; do
-        eye_of_providence "$1"
-        pandoc -V geometry:margin=1in "$1" -o "$2"
+        fwait "$FILE"
+        pandoc -s \
+               -t context \
+               "$@" \
+               "$FILE" -o "$BDIR/con.tex"
+        context --nonstopmode --noconsole --result="$BDIR/$BPDF" "$BDIR/con.tex"
+        pdftotext -layout "$BDIR/$BPDF" -
     done
 }
 
