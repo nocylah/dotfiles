@@ -44,14 +44,29 @@ ctx2pdf() {
 }
 
 md2pdf() {
+    FILE="$1"; shift
+    if [ ! -f "$FILE" ]; then return 1; fi
+
+    BDIR="build"
+    BPDF="build.pdf"
+
+    if [ ! -z "$1" ]; then BDIR="$1"; shift; fi
+    if [ ! -z "$1" ]; then BPDF="$1"; shift; fi
+
+    mkdir -p "$BDIR"
     while true; do
-        fwait "$1"
-        pandoc -V geometry:margin=1in "$1" -o "$2"
+        fwait "$FILE"
+        #pandoc -V geometry:margin=1in \
+        pandoc --filter pandoc-citeproc "$FILE" -o "$BDIR/$BPDF"
+        clear
+        pdftotext -layout "$BDIR/$BPDF" -
     done
 }
 
 md2ctx2pdf() {
     FILE="$1"; shift
+    if [ ! -f "$FILE" ]; then return 1; fi
+
     BDIR="build"
     BPDF="build.pdf"
 
@@ -65,7 +80,11 @@ md2ctx2pdf() {
                -t context \
                "$@" \
                "$FILE" -o "$BDIR/con.tex"
-        context --nonstopmode --noconsole --result="$BDIR/$BPDF" "$BDIR/con.tex"
+        context --nonstopmode \
+                --noconsole \
+                --result="$BDIR/$BPDF" \
+                "$BDIR/con.tex"
+        clear
         pdftotext -layout "$BDIR/$BPDF" -
     done
 }
