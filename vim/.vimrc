@@ -77,7 +77,7 @@ let g:airline_powerline_fonts=1
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_light='soft'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_warnings=1
 
@@ -100,6 +100,9 @@ let g:slime_python_ipython=1
 "   autocmd!
 "   autocmd BufReadPost *  DetectIndent
 "augroup END
+
+"persistent undo
+set undofile
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>
