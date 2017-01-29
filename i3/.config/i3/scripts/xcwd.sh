@@ -11,8 +11,8 @@ if ! [[ "$X_PID" ]] || [[ "$X_CMD" != "termite" ]]; then
 fi
 
 # get current term cwd
-SHELL_PID=/proc/$(cut -d ' ' -f 1 < /proc/"$X_PID"/task/"$X_PID"/children)/cwd
-SHELL_CWD=$(readlink "$SHELL_PID")
+SHELL_PID=$(pgrep -P "$X_PID")
+SHELL_CWD=$(readlink "/proc/$SHELL_PID/cwd")
 
 # open new term with same cwd
 termite -d "$SHELL_CWD"
