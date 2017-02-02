@@ -97,7 +97,7 @@ showpdf() {
 
 # reverse sshfs
 rsshfs() {
-    dpipe /usr/lib/ssh/sftp-server = ssh "$1" sshfs ":$2" "$3" -o slave
+    dpipe /usr/lib/ssh/sftp-server = ssh "$1" sshfs ":$2" "$3" -o slave,idmap=user
 }
 
 # plan9 cpu, lol
@@ -106,7 +106,7 @@ cpu() {
     rsshfs "$1" "$(pwd)" "$mnt" &
     bpid=$!
     sleep 1;
-    ssh -t "$1" "cd $mnt; \$SHELL; cd; fusermount -u $mnt"
+    ssh -t "$1" "cd $mnt; \$SHELL; cd; fusermount -uz $mnt"
     kill -15 "$bpid"
 }
 
