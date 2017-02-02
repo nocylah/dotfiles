@@ -97,7 +97,17 @@ showpdf() {
 
 # reverse sshfs
 rsshfs() {
-    dpipe /usr/lib/ssh/sftp-server = ssh "$1" sshfs ":$2" "$3" -o slave
+    dpipe /usr/lib/ssh/sftp-server = ssh -C "$1" sshfs ":$2" "$3" -o slave
+}
+
+# plan9 cpu, lol
+cpu() {
+    mnt=$(ssh "$1" mktemp -d)
+    rsshfs "$1" "$(pwd)" "$mnt" &
+    bpid=$!
+    sleep 1;
+    ssh -t "$1" "cd $mnt; \$SHELL; cd; fusermount -u $mnt"
+    kill -15 "$bpid"
 }
 
 export EDITOR=nvim
