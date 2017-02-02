@@ -102,11 +102,16 @@ rsshfs() {
 
 # plan9 cpu, lol
 cpu() {
+    # make a temp mount dir
     mnt=$(ssh "$1" mktemp -d)
+    # rsshfs mount
     rsshfs "$1" "$(pwd)" "$mnt" &
     bpid=$!
+    # wait a second for rsshfs to finish mounting
     sleep 1;
-    ssh -t "$1" "cd $mnt; \$SHELL; cd; fusermount -uz $mnt"
+    # ssh in, premptively lazy unmount (in case session is lost)
+    ssh -t "$1" "cd $mnt; fusermount -uz $mnt; \$SHELL"
+    # cleanly kill rsshfs
     kill -15 "$bpid"
 }
 
