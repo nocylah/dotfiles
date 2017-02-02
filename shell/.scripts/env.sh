@@ -97,7 +97,7 @@ showpdf() {
 
 # reverse sshfs
 rsshfs() {
-    dpipe /usr/lib/ssh/sftp-server = ssh -C "$1" sshfs ":$2" "$3" -o slave
+    dpipe /usr/lib/ssh/sftp-server = ssh "$1" sshfs ":$2" "$3" -o slave
 }
 
 # plan9 cpu, lol
