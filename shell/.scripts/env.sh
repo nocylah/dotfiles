@@ -109,8 +109,8 @@ cpu() {
     bpid=$!
     # wait a second for rsshfs to finish mounting
     sleep 1;
-    # ssh in, premptively lazy unmount (in case session is lost)
-    ssh -t "$1" "cd $mnt; fusermount -uz $mnt; \$SHELL"
+    # ssh in, exec shell, cleanly unmount
+    ssh -t "$1" "cd $mnt; \$SHELL; fusermount -uz $mnt"
     # cleanly kill rsshfs
     kill -15 "$bpid"
 }
