@@ -27,15 +27,17 @@ fwait() {
 
 fwdo() {
     FILE="$1"; shift
-    CMD="$*"
+    if [ ! -f "$FILE" ]; then return 1; fi
 
     while true; do
-        fwait "$FILE"
+        fwait "$*"
         $CMD
     done
 }
 
 ctx2pdf() {
+    if [ ! -f "$1" ]; then return 1; fi
+
     while true; do
         fwait "$1"
         context --nonstopmode "$1"
