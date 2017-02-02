@@ -93,6 +93,11 @@ showpdf() {
     pdftotext -nopgbrk -layout "$1" - | less
 }
 
+# reverse sshfs
+rsshfs() {
+    dpipe /usr/lib/ssh/sftp-server = ssh "$1" sshfs ":$2" "$3" -o slave
+}
+
 export EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
