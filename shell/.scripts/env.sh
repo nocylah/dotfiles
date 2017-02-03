@@ -12,7 +12,7 @@ alias slime="tmux -L slime new-session"
 
 alias resource="source ~/.scripts/env.sh"
 
-alias ssh="TERM=xterm-color ssh"
+alias ssh="TERM=xterm-256color ssh"
 alias socks="autossh -M 0 -v -TND 5115"
 alias ccat="pygmentize -f terminal16m -O style=monokai -g"
 
