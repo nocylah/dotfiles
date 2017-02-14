@@ -1,0 +1,3 @@
+#!/bin/bash
+# reverse sshfs
+dpipe /usr/lib/ssh/sftp-server = ssh "$1" sshfs ":$2" "$3" -o slave,idmap=user

@@ -1,0 +1,2 @@
+#!/bin/bash
+pdftotext -nopgbrk -layout "$1" - | less

@@ -1,0 +1,2 @@
+#!/bin/bash
+inotifywait -e modify "$1"

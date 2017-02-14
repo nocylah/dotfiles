@@ -1,0 +1,24 @@
+#!/bin/bash
+FILE="$1"; shift
+if [ ! -f "$FILE" ]; then return 1; fi
+
+BDIR="build"
+BPDF="build.pdf"
+
+if [ ! -z "$1" ]; then BDIR="$1"; shift; fi
+if [ ! -z "$1" ]; then BPDF="$1"; shift; fi
+
+mkdir -p "$BDIR"
+while true; do
+    fwait "$FILE"
+    pandoc -s \
+           -t context \
+           "$@" \
+           "$FILE" -o "$BDIR/con.tex"
+    context --nonstopmode \
+            --noconsole \
+            --result="$BDIR/$BPDF" \
+            "$BDIR/con.tex"
+    clear
+    pdftotext -layout "$BDIR/$BPDF" -
+done

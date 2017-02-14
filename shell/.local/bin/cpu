@@ -1,0 +1,13 @@
+#!/bin/bash
+# plan9 cpu, lol
+# make a temp mount dir
+mnt=$(ssh "$1" mktemp -d)
+# rsshfs mount
+rsshfs "$1" "$(pwd)" "$mnt" &
+bpid=$!
+# wait a second for rsshfs to finish mounting
+sleep 1;
+# ssh in, exec shell, cleanly unmount
+ssh -t "$1" "cd $mnt; \$SHELL; fusermount -uz $mnt"
+# cleanly kill rsshfs
+kill -15 "$bpid"
