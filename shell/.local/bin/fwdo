@@ -1,0 +1,8 @@
+#!/bin/bash
+FILE="$1"; shift
+if [ ! -f "$FILE" ]; then return 1; fi
+
+while true; do
+    fwait "$*"
+    $CMD
+done

@@ -19,81 +19,9 @@ alias ccat="pygmentize -f terminal16m -O style=monokai -g"
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
 alias tree="tree -C"
-export LESSOPEN="| pygmentize -f terminal16m -O style=monokai -g %s"
 
-fwait() {
-    inotifywait -e modify "$1"
-}
-
-fwdo() {
-    FILE="$1"; shift
-    if [ ! -f "$FILE" ]; then return 1; fi
-
-    while true; do
-        fwait "$*"
-        $CMD
-    done
-}
-
-ctx2pdf() {
-    if [ ! -f "$1" ]; then return 1; fi
-
-    while true; do
-        fwait "$1"
-        context --nonstopmode "$1"
-        pdftotext -layout ./.*pdf -
-    done
-}
-
-md2pdf() {
-    FILE="$1"; shift
-    if [ ! -f "$FILE" ]; then return 1; fi
-
-    BDIR="build"
-    BPDF="build.pdf"
-
-    if [ ! -z "$1" ]; then BDIR="$1"; shift; fi
-    if [ ! -z "$1" ]; then BPDF="$1"; shift; fi
-
-    mkdir -p "$BDIR"
-    while true; do
-        fwait "$FILE"
-        #pandoc -V geometry:margin=1in \
-        pandoc --filter pandoc-citeproc "$FILE" -o "$BDIR/$BPDF"
-        clear
-        pdftotext -layout "$BDIR/$BPDF" -
-    done
-}
-
-md2ctx2pdf() {
-    FILE="$1"; shift
-    if [ ! -f "$FILE" ]; then return 1; fi
-
-    BDIR="build"
-    BPDF="build.pdf"
-
-    if [ ! -z "$1" ]; then BDIR="$1"; shift; fi
-    if [ ! -z "$1" ]; then BPDF="$1"; shift; fi
-
-    mkdir -p "$BDIR"
-    while true; do
-        fwait "$FILE"
-        pandoc -s \
-               -t context \
-               "$@" \
-               "$FILE" -o "$BDIR/con.tex"
-        context --nonstopmode \
-                --noconsole \
-                --result="$BDIR/$BPDF" \
-                "$BDIR/con.tex"
-        clear
-        pdftotext -layout "$BDIR/$BPDF" -
-    done
-}
-
-showpdf() {
-    pdftotext -nopgbrk -layout "$1" - | less
-}
+export LESS='-Xr'
+export LESSOPEN="| pygmentize -f terminal16m -O style=autumn -g %s"
 
 # reverse sshfs
 rsshfs() {

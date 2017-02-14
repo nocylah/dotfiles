@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ ! -f "$1" ]; then return 1; fi
+
+while true; do
+    fwait "$1"
+    context --nonstopmode "$1"
+    pdftotext -layout ./.*pdf -
+done
