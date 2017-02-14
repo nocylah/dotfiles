@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', {'for': 'c'}
 Plug 'rdnetto/YCM-Generator', {'for': 'c', 'branch': 'stable'}
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
 Plug 'kchmck/vim-coffee-script'
 Plug 'rodjek/vim-puppet'
 Plug 'airblade/vim-gitgutter'
@@ -75,9 +76,9 @@ let g:airline_powerline_fonts=1
 
 "colorscheme valloric
 colorscheme gruvbox
-set background=dark
+set background=light
 let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='soft'
+let g:gruvbox_contrast_light='hard'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_warnings=1
 
