@@ -30,8 +30,9 @@ xscreensaver &
 unclutter -grab &
 blueman-applet &
 nm-applet &
+fluxgui &
 
 ~/.scripts/mount_ssync.sh
 spopd
 
-exec $1
+exec "$1"

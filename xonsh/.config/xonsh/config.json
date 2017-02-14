@@ -1,15 +1,15 @@
-{
- "env": {
+{ "env": {
   "LANG": "en_US.UTF-8",
-
   "VI_MODE": true,
-
-  "XONSH_COLOR_STYLE": "monokai",
+  "XONSH_COLOR_STYLE": "autumn",
+  "PROJECT_DIRS": ["~/code"],
+  "SUPPRESS_BRANCH_TIMEOUT_MESSAGE": true,
   "PROMPT": "{YELLOW}{short_cwd}{NO_COLOR}> ",
-  "BOTTOM_TOOLBAR": "{BLUE}{env_name:{}}{branch_color}{curr_branch: {}}"
+  "RIGHT_PROMPT": "{jobs}",
+  "BOTTOM_TOOLBAR": "{RED}{hostname:🖳 {}}{PURPLE}{env_name: 🐍{}}{branch_color}{gitstatus: ⎇  {}}"
  },
-
  "xontribs": [
-  "vox"
+  "vox",
+  "vox_tabcomplete"
  ]
 }
