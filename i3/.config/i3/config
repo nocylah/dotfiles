@@ -193,9 +193,9 @@ bindsym $mod+greater exec echo 'next' | nc localhost 6602
 bindsym $mod+slash exec echo 'toggle' | nc localhost 6602
 
 # brightness
-bindcode Control+108 exec xbacklight -dec 5
-bindcode Control+105 exec xbacklight -inc 5
-bindcode $mod+108 exec xbacklight -set 5
+bindcode Control+108 exec light -U 5
+bindcode Control+105 exec light -A 5
+bindcode $mod+108 exec light -S 5
 
 # volume
 bindcode Shift+108 exec pactl set-sink-volume 0 -2%
