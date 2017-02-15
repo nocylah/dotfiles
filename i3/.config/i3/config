@@ -158,20 +158,25 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
+        position top
+        separator_symbol ">"
+        colors {
+                background #282828
+        }
         #tray_output primary
 }
 
 # hide the i3bar
 bindsym $mod+b bar mode toggle
 
-# class                 border  backgr. text    indicator
-#client.focused          #076678 #458588 #ebdbb2 #b8bb26
-#client.focused_inactive #333333 #5f676a #ffffff #484e50
-#client.unfocused        #333333 #222222 #888888 #292d2e
-#client.urgent           #2f343a #9d0006 #ffffff #9d0006
-#client.placeholder      #000000 #0c0c0c #ffffff #000000
+# class                 border  backgr. text    indicator child_border
+client.focused          #458588 #076678 #ffffff #d79921   #076678
+client.focused_inactive #689d6a #427b58 #ffffff #484e50   #427b58
+client.unfocused        #665c54 #504945 #bdae93 #292d2e   #504945
+client.urgent           #9d0006 #cc241d #ffffff #900000   #cc241d
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #ffffff
+#client.background       #ffffff
 
 #####
 
