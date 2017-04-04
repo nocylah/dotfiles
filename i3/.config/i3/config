@@ -161,7 +161,17 @@ bar {
         position top
         separator_symbol ">"
         colors {
+                # class    color
                 background #282828
+                #statusline #ffffff
+                #separator #666666
+
+                # class            border  backgr. text
+                focused_workspace  #458588 #076678 #ffffff
+                active_workspace   #689d6a #427b58 #ffffff
+                inactive_workspace #665c54 #504945 #bdae93
+                urgent_workspace   #9d0006 #cc241d #ffffff
+                #binding_mode       #2f343a #900000 #ffffff
         }
         #tray_output primary
 }
