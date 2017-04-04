@@ -14,7 +14,7 @@ alias resource="source ~/.scripts/env.sh"
 
 alias ssh="env TERM=xterm-256color ssh"
 alias socks="autossh -M 0 -v -TND 5115"
-alias ct="highlight -O truecolor -s autumn \<"
+alias cat="highlight -O truecolor -s autumn \<"
 
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
