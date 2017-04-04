@@ -112,11 +112,18 @@ color=#0068f0
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-[temperature]
+#[temperature]
 #label=TEMP
+#interval=10
+#color=#0068f0
+
+# Top Process
+#
+# Get the costliest process by CPU usage.
+[proc]
+command=ps --sort=-pcpu | sed -n '2p' | tr -s ' ' | cut -d ' ' -f 4
 interval=10
 color=#0068f0
-
 
 # Battery indicator
 #
