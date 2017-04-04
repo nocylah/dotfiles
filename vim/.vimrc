@@ -1,36 +1,41 @@
-syntax on
+syntax on               "enable syntax highlighting
 
-set spell
-set tags+=~/.tags
+set spell               "enable spellcheck
+set tags+=~/.tags       "tags path
 
-set expandtab
-set tabstop=4
-set shiftwidth=4
+set expandtab           "use spaces by default
+set tabstop=4           "four spaces per tab
+set shiftwidth=4        "indent width for autoindent
 
-set autoindent
-set nosmartindent
-set nocindent
-set foldmethod=syntax
+set autoindent          "copy indentation from current line
+set nosmartindent       "no smart indentation
+set nocindent           "no c-specific indentation
+set foldmethod=syntax   "enable language-aware folding
 
-set tw=80
-set colorcolumn=80
-set number
-set rnu
-set termguicolors
-set hlsearch
-set breakindent
+set tw=80               "break text at 80 chars
+set colorcolumn=80      "80 char reminder column
+set breakindent         "break lines preserving indentation
 
-set clipboard+=unnamedplus
+set number              "line numbering
+set rnu                 "relative line numbering
 
-filetype on
-filetype indent on
+set termguicolors       "full colors
+"set lazyredraw          "only redraw when necesarry
+
+set hlsearch            "highlight searches
+set incsearch           "incremental highlighting
+
+set undofile            "persistent undo
+
+filetype indent on      "load indent rules
+filetype plugin on      "load plugin rules
 
 let mapleader=' '
 
 " plug
 call plug#begin('~/.vim/plugged')
-Plug 'Valloric/YouCompleteMe', {'for': 'c'}
-Plug 'rdnetto/YCM-Generator', {'for': 'c', 'branch': 'stable'}
+"Plug 'Valloric/YouCompleteMe', {'for': 'c'}
+"Plug 'rdnetto/YCM-Generator', {'for': 'c', 'branch': 'stable'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'kchmck/vim-coffee-script'
@@ -51,7 +56,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'roryokane/detectindent'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'Shougo/vinarise.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'maxbrunsfeld/vim-yankstack'
 call plug#end()
 
 "vim-pandoc-syntax
@@ -96,14 +101,22 @@ let g:slime_target="tmux"
 let g:slime_default_config={"socket_name": "slime", "target_pane": ":"}
 let g:slime_python_ipython=1
 
-"detectindent
-"augroup DetectIndent
-"   autocmd!
-"   autocmd BufReadPost *  DetectIndent
-"augroup END
+"ctrlp
+set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.d
 
-"persistent undo
-set undofile
+"yankstack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+"disable hl
+nnoremap <leader><leader> :<C-u>nohlsearch<CR>
+
+"case insensitive searches
+nmap / /\c
+
+"make explicit system clipboard integration
+nmap <esc>p "+p
+nmap <esc>y "+y
 
 imap <F1> <esc>:w<Enter>i
 imap <F2> <esc>:w<Enter>
@@ -114,5 +127,3 @@ map <F4> :q!<cr>
 
 map <F8> :!make<cr>
 map <F9> :!make<cr><Enter>
-
-filetype plugin indent on
