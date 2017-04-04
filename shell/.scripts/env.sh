@@ -14,14 +14,14 @@ alias resource="source ~/.scripts/env.sh"
 
 alias ssh="env TERM=xterm-256color ssh"
 alias socks="autossh -M 0 -v -TND 5115"
-alias ccat="pygmentize -f terminal16m -O style=autumn -g"
+alias ct="highlight -O truecolor -s autumn \<"
 
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
 alias tree="tree -C"
 
 export LESS='-Xr'
-export LESSOPEN="| pygmentize -f terminal16m -O style=autumn -g %s"
+export LESSOPEN="| highlight -O truecolor -s autumn"
 
 export EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
