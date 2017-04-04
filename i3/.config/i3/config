@@ -183,9 +183,6 @@ client.urgent           #9d0006 #cc241d #ffffff #900000   #cc241d
 # pass
 bindsym $mod+p exec passmenu
 
-# vector web
-bindsym $mod+c exec chromium --app=https://riot.im/develop
-
 # spotify
 bindsym $mod+m exec dspop
 bindsym $mod+less exec echo 'prev' | nc localhost 6602
