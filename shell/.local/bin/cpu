@@ -1,13 +1,19 @@
 #!/bin/bash
 # plan9 cpu, lol
+remote="$1"; shift
+
 # make a temp mount dir
-mnt=$(ssh "$1" mktemp -d)
+mnt=$(ssh "$remote" mktemp -d)
+
 # rsshfs mount
-rsshfs "$1" "$(pwd)" "$mnt" &
+rsshfs "$remote" "$(pwd)" "$mnt" &
 bpid=$!
+
 # wait a second for rsshfs to finish mounting
 sleep 1;
+
 # ssh in, exec shell, cleanly unmount
-ssh -t "$1" "cd $mnt; \$SHELL; fusermount -uz $mnt"
+ssh -t "$remote" "cd $mnt; \$SHELL $*; fusermount -uz $mnt"
+
 # cleanly kill rsshfs
 kill -15 "$bpid"

@@ -11,8 +11,9 @@ if [ ! -z "$1" ]; then BPDF="$1"; shift; fi
 mkdir -p "$BDIR"
 while true; do
     fwait "$FILE"
-    #pandoc -V geometry:margin=1in \
-    pandoc --filter pandoc-citeproc "$FILE" -o "$BDIR/$BPDF"
+    pandoc \
+           --filter pandoc-citeproc \
+           "$FILE" -o "$BDIR/$BPDF"
     clear
     pdftotext -layout "$BDIR/$BPDF" -
 done
