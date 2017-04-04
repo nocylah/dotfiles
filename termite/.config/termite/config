@@ -43,6 +43,4 @@ color15 = #3c3836
 # vim: ft=dosini cms=#%s
 
 [options]
-font = Terminess Powerline 12
-font = TamzenForPowerline 12
 font = Fira Mono 10
