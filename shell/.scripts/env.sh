@@ -20,8 +20,8 @@ alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 
 alias tree="tree -C"
 
-export LESS='-Xr'
-export LESSOPEN="| highlight -O truecolor -s autumn"
+export LESS='--raw-control-chars'
+export LESSOPEN="| highlight --line-numbers --force -O truecolor -s autumn %s"
 
 export EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
