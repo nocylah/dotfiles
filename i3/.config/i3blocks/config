@@ -121,7 +121,7 @@ color=#0068f0
 #
 # Get the costliest process by CPU usage.
 [proc]
-command=ps --sort=-pcpu | sed -n '2p' | tr -s ' ' | cut -d ' ' -f 4
+command=ps -eo comm,pcpu --sort=-pcpu | sed -n '2p' | tr -s ' '
 interval=10
 color=#0068f0
 
