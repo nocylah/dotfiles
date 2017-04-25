@@ -3,8 +3,8 @@
 X_PID=$(xdotool getwindowfocus getwindowpid)
 
 # check if focused window isn't term
-X_CMD=$(cat /proc/"$X_PID"/cmdline)
-if ! [[ "$X_PID" ]] || [[ "$X_CMD" != "termite" ]]; then
+SHELL_GREP=$(grep "$0" /proc/"$X_PID"/cmdline)
+if ! [[ "$X_PID" ]] || ! $SHELL_GREP; then
     # then open term normally
     termite "$@"
     exit
