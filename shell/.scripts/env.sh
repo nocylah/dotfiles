@@ -4,7 +4,7 @@ alias dd="dcfldd"
 alias cp="rsync -P"
 
 alias e="nvim"
-alias p="pacaur"
+alias p="yaourt"
 alias g="git"
 
 alias sbcl="rlwrap sbcl"
@@ -14,7 +14,7 @@ alias resource="source ~/.scripts/env.sh"
 
 alias ssh="env TERM=xterm-256color ssh"
 alias socks="autossh -M 0 -v -TND 5115"
-alias cat="highlight --force -O truecolor -s autumn \<"
+alias ccat="highlight --force -O truecolor -s autumn \<"
 
 alias next="feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper"
 

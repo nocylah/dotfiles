@@ -1,6 +1,6 @@
 #!/bin/bash
 FILE="$1"; shift
-if [ ! -f "$FILE" ]; then exit 1; fi
+if [ ! -f "$FILE" ] && [ ! -d "$FILE" ]; then exit 1; fi
 
 while true; do
     fwait "$FILE"
