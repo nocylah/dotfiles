@@ -1,5 +1,5 @@
-# Gruvbox Light
 [colors]
+# Gruvbox Light
 # hard contrast: background = #f9f5d7
 # medium contrast:
 background = #fbf1c7
@@ -40,7 +40,9 @@ color14 = #427b58
 color7 = #7c6f64
 color15 = #3c3836
 
-# vim: ft=dosini cms=#%s
-
 [options]
+allow_bold = true
+audible_bell = true
+cursor_blink = on
 font = Fira Mono 10
+urgent_on_bell = true
