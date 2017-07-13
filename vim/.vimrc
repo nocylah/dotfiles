@@ -75,9 +75,9 @@ let g:ycm_add_preview_to_completeopt=1
 
 "gitgutter
 let g:gitgutter_enabled=1
-"let g:gitgutter_highlight_lines=1
 let g:gitgutter_realtime=1
 let g:gitgutter_eager=1
+set updatetime=250
 
 "airline
 let g:airline_powerline_fonts=1
@@ -150,6 +150,7 @@ map <F1> :w<cr>
 map <F3> :wq<cr>
 map <F4> :q!<cr>
 
+"quick make
 if filereadable('Makefile')
     map <F8> :!make<cr>
 elseif filereadable('build.xml')
