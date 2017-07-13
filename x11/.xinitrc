@@ -32,6 +32,9 @@ xscreensaver &
 unclutter -grab &
 blueman-applet &
 nm-applet &
+pulseaudio-dnla &
+pasystray &
+dunst &
 
 ~/.scripts/mount_ssync.sh
 spopd
