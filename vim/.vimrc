@@ -48,7 +48,7 @@ Plug 'airblade/vim-gitgutter'            "git chunk annotation
 Plug 'tpope/vim-sleuth'                  "indent detection
 Plug 'ntpeters/vim-better-whitespace'    "highlight trailing whitespace
 Plug 'morhetz/gruvbox'                   "colorscheme
-Plug 'benekastah/neomake'                "linter
+Plug 'w0rp/ale'                          "linter
 Plug 'Shougo/deoplete.nvim'              "autocomplete
 Plug 'artur-shaik/vim-javacomplete2'     "autocomplete for java
 Plug 'zchee/deoplete-jedi'               "autocomplete for python
@@ -61,6 +61,7 @@ Plug 'ctrlpvim/ctrlp.vim'                "file/buffer searching
 Plug 'jpalardy/vim-slime'                "slime repl
 Plug 'tmhedberg/SimpylFold'              "python folding
 Plug 'maxbrunsfeld/vim-yankstack'        "kill ring for vim
+Plug 'kshenoy/vim-signature'             "display marks
 call plug#end()
 
 "vim-pandoc-syntax
@@ -81,6 +82,7 @@ set updatetime=250
 
 "airline
 let g:airline_powerline_fonts=1
+let g:airline#extensions#ale#enabled = 1
 
 "highlight tab characters
 autocmd ColorScheme * highlight Tab ctermbg=228 guibg=#f2e5bc
@@ -93,8 +95,9 @@ let g:gruvbox_contrast_light='hard'
 let g:gruvbox_improved_strings=1
 let g:gruvbox_improved_warnings=1
 
-"neomake
-autocmd! BufWritePost * Neomake
+"ale
+nmap <silent> <C-k> <Plug>(ale_previous)
+nmap <silent> <C-j> <Plug>(ale_next)
 
 "deoplete
 let g:deoplete#enable_at_startup=1
@@ -114,7 +117,7 @@ let g:slime_default_config={'socket_name': 'slime', 'target_pane': ':'}
 "let g:slime_python_ipython=1
 
 "ctrlp
-set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.d,*.jar,*.ods
+set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.d,*.jar,*.ods,*.iml,*.pyc
 
 "tagbar
 let g:tagbar_autopreview = 1
@@ -131,6 +134,9 @@ endif
 "yankstack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+"signature
+nnoremap m<Space> :SignatureToggleSigns<CR>
 
 "disable hl
 nnoremap <leader><leader> :<C-u>nohlsearch<CR>
