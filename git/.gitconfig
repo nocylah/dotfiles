@@ -1,3 +1,5 @@
+[core]
+	excludesfile = ~/.gitskip
 [user]
 	email = louis@jencka.us
 	name = Louis Jencka
