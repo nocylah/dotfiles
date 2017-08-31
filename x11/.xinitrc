@@ -34,6 +34,7 @@ blueman-applet &
 nm-applet &
 pulseaudio-dnla &
 pasystray &
+syncthing-gtk --minimized &
 dunst &
 
 ~/.scripts/mount_ssync.sh
