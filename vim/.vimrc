@@ -117,7 +117,7 @@ let g:slime_default_config={'socket_name': 'slime', 'target_pane': ':'}
 "let g:slime_python_ipython=1
 
 "ctrlp
-set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.d,*.jar,*.ods,*.iml,*.pyc
+set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.jar,*.ods,*.iml,*.pyc,.git/*
 
 "tagbar
 let g:tagbar_autopreview = 1
