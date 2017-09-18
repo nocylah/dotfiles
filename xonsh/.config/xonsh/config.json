@@ -1,6 +1,7 @@
 { "env": {
   "LANG": "en_US.UTF-8",
   "VI_MODE": true,
+  "TERM": "xterm-256color",
   "XONSH_COLOR_STYLE": "autumn",
   "PROJECT_DIRS": ["~/code"],
   "SUPPRESS_BRANCH_TIMEOUT_MESSAGE": true,
