@@ -13,6 +13,7 @@ while true; do
     fwait "$FILE"
     pandoc \
            --filter pandoc-citeproc \
+           --latex-engine=lualatex \
            "$FILE" -o "$BDIR/$BPDF"
     clear
     pdftotext -layout "$BDIR/$BPDF" -
