@@ -1,4 +1,5 @@
 #!/bin/sh
+session="i3"; if ! [ -z $1 ]; then session="$1"; fi
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 
@@ -20,24 +21,13 @@ fi
 
 export PATH=$HOME/.local/bin:$PATH
 
-# xrandr --dpi 144
-fluxgui &
-
 # running with -b kills radeon
 compton -CG &
 feh --randomize --recursive --no-fehbg --bg-fill ~/.wallpaper
 #xautolock -locker "$HOME/.local/bin/screenlock.sh" -time 5 &
 #xautolock -locker "/home/louis/.local/bin/screenlock.sh" -time 5 &
-xscreensaver &
-unclutter -grab &
-blueman-applet &
-nm-applet &
-pulseaudio-dnla &
-pasystray &
-syncthing-gtk --minimized &
-dunst &
 
 ~/.scripts/mount_ssync.sh
-spopd
+~/.initrc.sh
 
-exec "$1"
+exec "$session"
