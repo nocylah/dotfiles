@@ -106,7 +106,7 @@
   bindsym $mod+r mode "resize"
 
 ### Appearance
-  font pango:Tamzen 12
+  font pango:Roboto 10
   # class          border  backgr. text  indicator child_border
   client.focused          #458588 #076678 #ffffff #d79921   #076678
   client.focused_inactive #689d6a #427b58 #ffffff #484e50   #427b58
@@ -121,7 +121,7 @@
   bar {
     status_command i3blocks
     position top
-    separator_symbol ">"
+    separator_symbol "/"
     colors {
       # class    color
       background #282828
@@ -155,7 +155,10 @@
   bindsym $mod+Return exec ~/.config/i3/scripts/xcwd.sh -e xonsh
 
   # start a browser
-  bindsym $mod+backslash exec firefox --new-tab
+  bindsym $mod+backslash exec firefox --new-window
+
+  # start a browser
+  bindsym $mod+Shift+backslash exec firefox --private-window
 
   # kill focused window
   bindsym $mod+Shift+q kill

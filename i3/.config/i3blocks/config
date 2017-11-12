@@ -28,11 +28,11 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[spop]
+#[spop]
 #label=Volume:
 #label=♪
-command=~/.config/i3blocks/scripts/spop_stat.sh
-interval=10
+#command=~/.config/i3blocks/scripts/spop_stat.sh
+#interval=10
 
 # Volume indicator
 #
@@ -78,7 +78,7 @@ color=#959595
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-label=🖧
+label=🔗
 #instance=wlan0
 color=#00FF00
 interval=10
