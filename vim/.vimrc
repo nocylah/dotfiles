@@ -1,7 +1,7 @@
 syntax on               "enable syntax highlighting
 
 set spell               "enable spellcheck
-set tags+=~/.gtags       "tags paths
+set tags+=~/.gtags      "tags paths
 set tags+=.tags
 
 set expandtab           "use spaces by default
@@ -19,6 +19,7 @@ set breakindent         "break lines preserving indentation
 
 set number              "line numbering
 set rnu                 "relative line numbering
+set printoptions+=number:y
 
 set termguicolors       "full colors
 set lazyredraw          "only redraw when necesarry
@@ -137,6 +138,9 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 "signature
 nnoremap m<Space> :SignatureToggleSigns<CR>
+
+"center text
+map <leader>c :center 80<cr>
 
 "disable hl
 nnoremap <leader><leader> :<C-u>nohlsearch<CR>
