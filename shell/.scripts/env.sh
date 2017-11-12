@@ -10,7 +10,7 @@ alias g="git"
 alias sbcl="rlwrap sbcl"
 alias slime="tmux -L slime new-session"
 
-alias tmux="tmux a || tmux"
+alias atmux="tmux a || tmux"
 
 alias resource="source ~/.scripts/env.sh"
 
