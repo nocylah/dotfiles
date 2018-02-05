@@ -106,7 +106,7 @@
   bindsym $mod+r mode "resize"
 
 ### Appearance
-  font pango:Roboto 10
+  font pango:Arvo 10
   # class          border  backgr. text  indicator child_border
   client.focused          #458588 #076678 #ffffff #d79921   #076678
   client.focused_inactive #689d6a #427b58 #ffffff #484e50   #427b58

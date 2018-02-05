@@ -23,7 +23,7 @@ if cmd == 'reset':
 elif cmd == 'rename':
     i3_pre = 'Tag: '
     i3_font = '-*-terminesspowerline-*-*-*-*-32-*'
-    i3_cmd = 'rename workspace to {}:%s'.format(cur['num'])
+    i3_cmd = 'rename workspace to {}+%s'.format(cur['num'])
     i3_exec = ['i3-input',
                '-F', i3_cmd,
                '-f', i3_font,

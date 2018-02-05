@@ -97,13 +97,13 @@ interval=10
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-[cpu_usage]
+#[cpu_usage]
 #label=CPU
-label=∿
-interval=10
+#label=∿
+#interval=10
 #min_width=CPU: 100.00%
-separator=false
-color=#aaaaff
+#separator=false
+#color=#aaaaff
 
 #[load_average]
 #interval=10
@@ -139,7 +139,7 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+%d/%m/%y %H:%M:%S'
+command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
 
 # Generic media player support
