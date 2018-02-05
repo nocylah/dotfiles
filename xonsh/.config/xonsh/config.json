@@ -1,4 +1,5 @@
-{ "env": {
+{
+  "env": {
   "LANG": "en_US.UTF-8",
   "VI_MODE": true,
   "TERM": "xterm-256color",
@@ -8,7 +9,8 @@
   "PROMPT": "{YELLOW}{short_cwd}{NO_COLOR}> ",
   "COMPLETIONS_CONFIRM": true,
   "RIGHT_PROMPT": "{jobs}",
-  "BOTTOM_TOOLBAR": "{RED}{hostname:🖳 {}}{PURPLE}{env_name: 🐍{}}{branch_color}{gitstatus: ⎇  {}}"
+  "BOTTOM_TOOLBAR": "{RED}{hostname:🖳 {}}{PURPLE}{env_name: 🐍{}}{branch_color}{gitstatus: ⎇  {}}",
+  "TITLE": "xonsh {cwd}"
  },
  "xontribs": [
   "vox",
