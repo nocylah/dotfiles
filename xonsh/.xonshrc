@@ -1,0 +1,8 @@
+source-bash ~/.scripts.sh
+
+def _jobs():
+    j = !(jobs).out.split()
+    if j:
+        return j[0]
+
+$PROMPT_FIELDS['jobs'] = _jobs
