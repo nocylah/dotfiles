@@ -4,5 +4,23 @@ def _jobs():
     j = !(jobs).out.split()
     if j:
         return j[0]
-
 $PROMPT_FIELDS['jobs'] = _jobs
+
+$LANG = "en_US.UTF-8"
+$TERM = "xterm-256color"
+$VI_MODE = True
+
+$SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
+$COMPLETIONS_CONFIRM = True
+
+$TITLE = "xonsh {cwd}"
+$XONSH_COLOR_STYLE = "autumn"
+$PROMPT = "{YELLOW}{short_cwd}{NO_COLOR}> "
+$RIGHT_PROMPT = "{jobs}"
+$BOTTOM_TOOLBAR = "{RED}{hostname:🖳 {}}{PURPLE}{env_name: 🐍{}}{branch_color}{gitstatus: ⎇  {}}"
+$PTK_STYLE_OVERRIDES['bottom-toolbar'] = 'noreverse'
+
+$PROJECT_DIRS = ["~/code"]
+
+xontrib load vox
+# xontrib load vox_tabcomplete
