@@ -131,10 +131,16 @@ color=#aaaaff
 # The battery instance defaults to 0.
 [battery]
 #label=BAT
-label=⚡
+command=acpi -b | grep -o -P "\\d+%"
+label=⚡ 
 #instance=1
 interval=30
 #color=#f0f000
+
+[wwan]
+command=mmcli -m 0 | grep signal | grep -o -P "\\d+%"
+label=wwan 
+interval=10
 
 # Date Time
 #

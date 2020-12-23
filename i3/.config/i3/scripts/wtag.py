@@ -11,7 +11,7 @@ cmd = sys.argv[1]
 
 # get the current focused workspace
 try:
-    out = json.loads(check_output('i3-msg -t get_workspaces'.split()))
+    out = json.loads(check_output('swaymsg -t get_workspaces'.split()))
     cur = [w for w in out if w['focused']][0]
 except:
     sys.exit(1)
