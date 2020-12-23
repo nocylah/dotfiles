@@ -36,6 +36,10 @@ filetype plugin on      "load plugin rules
 
 let mapleader=' '       "spacebar as leader key
 
+"don't use virtualenv
+let python_host_prog='/usr/bin/python2'
+let python3_host_prog='/usr/bin/python3'
+
 "plug
 call plug#begin('~/.vim/plugged')
 "Plug 'Valloric/YouCompleteMe', {'for': 'c'}
@@ -44,8 +48,10 @@ Plug 'kchmck/vim-coffee-script'          "syn highlight - coffee
 Plug 'rodjek/vim-puppet'                 "syn highlight - puppet
 Plug 'vim-pandoc/vim-pandoc-syntax'      "syn highlight - markdown
 Plug 'rust-lang/rust.vim'                "syn highlight - rust
+Plug 'arrufat/vala.vim'                  "syn highlight - vala
 Plug 'tpope/vim-fugitive'                "git integration
 Plug 'airblade/vim-gitgutter'            "git chunk annotation
+Plug 'airblade/vim-accent'               "accented character support
 Plug 'tpope/vim-sleuth'                  "indent detection
 Plug 'ntpeters/vim-better-whitespace'    "highlight trailing whitespace
 Plug 'morhetz/gruvbox'                   "colorscheme
@@ -53,7 +59,9 @@ Plug 'w0rp/ale'                          "linter
 Plug 'Shougo/deoplete.nvim'              "autocomplete
 Plug 'artur-shaik/vim-javacomplete2'     "autocomplete for java
 Plug 'zchee/deoplete-jedi'               "autocomplete for python
+Plug 'racer-rust/vim-racer'              "autocomplete for rust
 Plug 'sbdchd/neoformat'                  "formatter
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "markdown preview
 Plug 'rhysd/rust-doc.vim'                "rust documentation
 Plug 'vim-airline/vim-airline'           "status bar
 Plug 'vim-airline/vim-airline-themes'    "status bar themes
@@ -99,6 +107,10 @@ let g:gruvbox_improved_warnings=1
 "ale
 nmap <silent> <C-k> <Plug>(ale_previous)
 nmap <silent> <C-j> <Plug>(ale_next)
+let g:ale_linters = {
+    \ 'rust': ['rls'],
+    \ 'haskell': ['stack-ghc', 'hlint', 'hdevtools', 'hfmt'],
+    \ }
 
 "deoplete
 let g:deoplete#enable_at_startup=1
@@ -110,7 +122,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:deoplete#sources#jedi#show_docstring=1
 
 "rust-doc
-let g:rust_doc#downloaded_rust_doc_dir='~/Code/rust/doc'
+let g:rust_doc#downloaded_rust_doc_dir='~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc'
 
 "slime
 let g:slime_target='tmux'
@@ -118,7 +130,7 @@ let g:slime_default_config={'socket_name': 'slime', 'target_pane': ':'}
 "let g:slime_python_ipython=1
 
 "ctrlp
-set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.jar,*.ods,*.iml,*.pyc,.git/*
+set wildignore+=*.so,*.swp,*.zip,*.class,*.o,*.jar,*.ods,*.iml,*.pyc,.git/*,node_modules,dist,target
 
 "tagbar
 let g:tagbar_autopreview = 1
